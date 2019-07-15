@@ -3,8 +3,8 @@ import React from 'react';
 class SearchBar extends React.Component {
     state = { searchTerm: '' };
 
-    onInputChange = () => {
-
+    onInputChange = event => {
+		this.setState({ searchTerm: event.target.value });
     };
 
     render() {
