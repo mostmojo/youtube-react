@@ -4,7 +4,7 @@ import React from 'react';
 const VideoItem = ({video, onVideoSelect }) => { // destructuring. Instead of having to call props.video, curly braces does it for us!
 	return (
 		<div onClick={() => onVideoSelect(video)} className="video-item item">
-			<img className="ui image" alt="" src={video.snippet.thumbnails.medium.url} />
+			<img alt={video.snippet.title} className="ui image" src={video.snippet.thumbnails.medium.url} />
 			<div className="content">
 				<div className="header">{video.snippet.title}</div>
 			</div>
