@@ -1,9 +1,9 @@
 import './VideoItem.css';
 import React from 'react';
 
-const VideoItem = ({video}) => { // destructuring. Instead of having to call props.video, curly braces does it for us!
+const VideoItem = ({video, onVideoSelect }) => { // destructuring. Instead of having to call props.video, curly braces does it for us!
 	return (
-		<div className="video-item item">
+		<div onClick={() => onVideoSelect(video)} className="video-item item">
 			<img className="ui image" alt="" src={video.snippet.thumbnails.medium.url} />
 			<div className="content">
 				<div className="header">{video.snippet.title}</div>
@@ -13,3 +13,6 @@ const VideoItem = ({video}) => { // destructuring. Instead of having to call pro
 };
 
 export default VideoItem;
+
+// to communicate from child to parent (line 6), a callback is needed.
+// to communicate from parent to child, we pass down info with props
